@@ -87,20 +87,20 @@ def game(player1, player2):
             break
 
 if __name__ == '__main__':
-    print(" 7 | 8 | 9 ")
+    print("\n 7 | 8 | 9 ")
     print("-----------")
     print(" 4 | 5 | 6 ")
     print("-----------")
-    print(" 1 | 2 | 3 ")
+    print(" 1 | 2 | 3 \n")
 
-    a = input("Enter name of player 1 = ")
-    if a == ' ':
-        a = input("Enter your name         (Caution :- or if you give a space your name will be just a space) :")
+    a = input("\nEnter name of player 1 = ")
+    if a == '':
+        a = input("Enter your name\n(Caution :- or if you give a space your name will be just a space) :")
 
-    b = input("Enter name of player 2 = ")
-    if b == ' ':
-        b = input("Enter your name         (Caution :- or if you give a space your name will be just a space) :")
-        
+    b = input("\nEnter name of player 2 = ")
+    if b == '':
+        b = input("Enter your name\n(Caution :- or if you give a space your name will be just a space) :")
+
     if a == b:
         print("\nBoth the name are same..")
         b = input("\nPlayer B please change your name \n(Caution :- if the name is again same, both the players name will be given as same) : ")
@@ -111,16 +111,36 @@ if __name__ == '__main__':
 
     game(a, b)
 
-    restart = input("\nWould you like to play the game again? [Y/n] :- ")
+    restart = input("\nWould you like to play the game again? [Y,n] :- ")
     if (restart =='y' or restart == ''):
         print("\n*-*-* Hurrah!! the game starts again!!! *-*-*\n")
+        c = input("\nEnter name of player 1 \n(If you enter name as 'same' then ur name will be he same as it was)= ")
+        if c == '':
+            c = input("\nEnter your name\n(Caution :- or if you give a space your name will be just a space) :")
+
+        d = input("\nEnter name of player 2 \n(If you enter name as 'same' then ur name will be he same as it was)= ")
+        if d == '':
+            d = input("\nEnter your name\n(Caution :- or if you give a space your name will be just a space) :")
+
+        if c == d:
+            print("\nBoth the name are same..")
+            d = input("\nPlayer B please change your name \n(Caution :- if the name is again same, both the players name will be given as same) : ")
+            if d == ' ':
+                d = input("\nEnter your name again :")
+
+        if (c == 'same' or c == 'Same'):
+            c == a
+
+        if (d == 'same' or d == 'Same'):
+            d == b
+
         theBoard = {'7' : ' ' , '8' : ' ' , '9' : ' ' ,
             '4' : ' ' , '5' : ' ' , '6' : ' ' ,
             '1' : ' ' , '2' : ' ' , '3' : ' ' }
-        game(a, b)
+        game(c, d)
 
     if restart == 'n':
-        print("Thanks for playing !!!!!! See you both later !!!!!!")
-        
+        print("\nThanks for playing !!!!!! See you both later !!!!!!\n")
+
     else:
-        print("Thanks for playing !!!!!! See you both later !!!!!!")
+        print("\nThanks for playing !!!!!! See you both later !!!!!!\n")
